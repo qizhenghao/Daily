@@ -1,0 +1,16 @@
+#Eclipse
+.DS_Store
+.settings/
+products/
+bin/
+gen/
+obj/
+.classpath
+Thumbs.db
+local.properties
+*.iml
+out/
+.idea/
+.metadata
+/data
+/simian-log.xml
