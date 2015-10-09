@@ -12,5 +12,9 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".Activities.TestShaderActivity"></activity>
+        <uses-library android:name="android.test.runner"/>
     </application>
+    <instrumentation android:name="android.test.InstrumentationTestRunner"
+                     android:targetPackage="com.bruce.android.knowledges" android:label="aaa"/>
 </manifest>
