@@ -10,6 +10,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="onClick"/>
-    
+    <Button
+            android:id="@+id/main_open_test_canvas_btn"
+            android:text="main_open_test_canvas_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"/>
+    <Button
+            android:id="@+id/main_open_test__btn"
+            android:text="main_open_test__btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"/>
+
 </LinearLayout>
 

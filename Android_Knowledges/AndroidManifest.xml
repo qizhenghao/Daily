@@ -13,8 +13,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activities.TestShaderActivity"></activity>
-        <uses-library android:name="android.test.runner"/>
+        <activity android:name=".Activities.CanvasActivity"></activity>
     </application>
-    <instrumentation android:name="android.test.InstrumentationTestRunner"
-                     android:targetPackage="com.bruce.android.knowledges" android:label="aaa"/>
 </manifest>
