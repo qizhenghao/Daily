@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.widget.ListView;
 import com.bruce.android.knowledges.Activities.CanvasActivity;
+import com.bruce.android.knowledges.Activities.TestCustomViewGroupActivity;
+import com.bruce.android.knowledges.Activities.TestFlowLayoutActivity;
 import com.bruce.android.knowledges.Activities.TestShaderActivity;
 
 public class MyActivity extends Activity implements View.OnClickListener{
@@ -47,9 +49,12 @@ public class MyActivity extends Activity implements View.OnClickListener{
             case R.id.main_open_test_canvas_btn:
                 startActivity(new Intent(mContext, CanvasActivity.class));
                 break;
-//            case R.id.main_open_test_shader_btn:
-//                startActivity(new Intent(mContext, TestShaderActivity.class));
-//                break;
+            case R.id.main_open_test_custom_viewgroup_btn:
+                startActivity(new Intent(mContext, TestCustomViewGroupActivity.class));
+                break;
+            case R.id.main_open_test_flowlayout_btn:
+                startActivity(new Intent(mContext, TestFlowLayoutActivity.class));
+                break;
 
             default:
                 break;

@@ -14,5 +14,7 @@
         </activity>
         <activity android:name=".Activities.TestShaderActivity"></activity>
         <activity android:name=".Activities.CanvasActivity"></activity>
+        <activity android:name=".Activities.TestCustomViewGroupActivity"></activity>
+        <activity android:name=".Activities.TestFlowLayoutActivity"></activity>
     </application>
 </manifest>
