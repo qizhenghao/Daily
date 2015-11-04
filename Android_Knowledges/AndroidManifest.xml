@@ -16,5 +16,9 @@
         <activity android:name=".Activities.CanvasActivity"></activity>
         <activity android:name=".Activities.TestCustomViewGroupActivity"></activity>
         <activity android:name=".Activities.TestFlowLayoutActivity"></activity>
+        <activity android:name=".Activities.TextViewLinkActivity"></activity>
+        <activity android:name=".Activities.TestRotationTextViewActivity"></activity>
+        <activity android:name=".Activities.TestTransformMatrixActivity"></activity>
+        <activity android:name=".Activities.TestSingleTouchActivity"></activity>
     </application>
 </manifest>

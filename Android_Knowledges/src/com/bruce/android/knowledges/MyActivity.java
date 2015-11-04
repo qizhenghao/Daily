@@ -3,15 +3,13 @@ package com.bruce.android.knowledges;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.widget.ListView;
-import com.bruce.android.knowledges.Activities.CanvasActivity;
-import com.bruce.android.knowledges.Activities.TestCustomViewGroupActivity;
-import com.bruce.android.knowledges.Activities.TestFlowLayoutActivity;
-import com.bruce.android.knowledges.Activities.TestShaderActivity;
+import com.bruce.android.knowledges.Activities.*;
 
 public class MyActivity extends Activity implements View.OnClickListener{
 
@@ -26,6 +24,11 @@ public class MyActivity extends Activity implements View.OnClickListener{
 
         initViews();
         initData();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
     }
 
     private void initData() {
@@ -54,6 +57,18 @@ public class MyActivity extends Activity implements View.OnClickListener{
                 break;
             case R.id.main_open_test_flowlayout_btn:
                 startActivity(new Intent(mContext, TestFlowLayoutActivity.class));
+                break;
+            case R.id.main_open_textviewlink_btn:
+                startActivity(new Intent(mContext, TextViewLinkActivity.class));
+                break;
+            case R.id.main_open_rotation_text_btn:
+                startActivity(new Intent(mContext, TestRotationTextViewActivity.class));
+                break;
+            case R.id.main_open_transform_matrix_btn:
+                startActivity(new Intent(mContext, TestTransformMatrixActivity.class));
+                break;
+            case R.id.main_open_single_touch_btn:
+                startActivity(new Intent(mContext, TestSingleTouchActivity.class));
                 break;
 
             default:
