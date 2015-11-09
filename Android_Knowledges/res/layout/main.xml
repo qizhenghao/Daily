@@ -61,5 +61,27 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
             android:onClick="onClick"/>
+    <Button
+            android:id="@+id/main_open_cos_animation_btn"
+            android:text="main_open_cos_animation_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:onClick="onClick"/>
+    <Button
+            android:id="@+id/main_open_scan_animation1_btn"
+            android:text="测试扫描动画1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:onClick="onClick"/>
+
+    <Button
+            android:id="@+id/main_open_scan_animation_btn"
+            android:text="测试扫描动画2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:onClick="onClick"/>
 </LinearLayout>
 

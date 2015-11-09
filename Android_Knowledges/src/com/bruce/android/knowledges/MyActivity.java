@@ -10,6 +10,9 @@ import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.widget.ListView;
 import com.bruce.android.knowledges.Activities.*;
+import com.bruce.android.knowledges.costomviews.scanAnimation.ActSurfaceView;
+import com.bruce.android.knowledges.costomviews.scanAnimation.ScanAnimaitonStrategy;
+import com.bruce.android.knowledges.costomviews.scanAnimation.ScanAnimationActivity;
 
 public class MyActivity extends Activity implements View.OnClickListener{
 
@@ -69,6 +72,15 @@ public class MyActivity extends Activity implements View.OnClickListener{
                 break;
             case R.id.main_open_single_touch_btn:
                 startActivity(new Intent(mContext, TestSingleTouchActivity.class));
+                break;
+            case R.id.main_open_cos_animation_btn:
+                startActivity(new Intent(mContext, TestCosAnimationActivity.class));
+                break;
+            case R.id.main_open_scan_animation_btn:
+                startActivity(new Intent(mContext, ScanAnimationActivity.class));
+                break;
+            case R.id.main_open_scan_animation1_btn:
+                startActivity(new Intent(mContext, TestCosAnimationActivity.class));
                 break;
 
             default:
