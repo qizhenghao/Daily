@@ -24,11 +24,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
-    <com.bruce.android.knowledges.costomviews.scanAnimation.ParabolaView
+    <com.bruce.android.knowledges.costomviews.scanAnimation.AnimationSurfaceView
             android:id="@+id/surfaceView"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
 
-        ></com.bruce.android.knowledges.costomviews.scanAnimation.ParabolaView>
+        ></com.bruce.android.knowledges.costomviews.scanAnimation.AnimationSurfaceView>
 </LinearLayout>
 

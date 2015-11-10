@@ -29,26 +29,25 @@ public class ScanAnimationActivity extends Activity implements OnClickListener, 
 
         animationSurfaceView = (AnimationSurfaceView) findViewById(R.id.surfaceView);
 
-        iAnimationStrategy = new ScanAnimaitonStrategy();
-        int[] position = new int[2];
-        animationSurfaceView.getLocationInWindow(position);
-        ((ScanAnimaitonStrategy) iAnimationStrategy).setParams(position[0], position[1], 300, 2000);
+        initScanAnimation();
+    }
+
+    private void initScanAnimation() {
+        iAnimationStrategy = new ScanAnimaitonStrategy(animationSurfaceView, 300, 2000);
         animationSurfaceView.setStrategy(iAnimationStrategy);
         animationSurfaceView.setOnAnimationStausChangedListener(this);
+        animationSurfaceView.setIcon(BitmapFactory.decodeResource(getResources(), R.drawable.scan_icon));
     }
 
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btnEndAnim:
-                Log.d("Bruce1", "isShowMovie:" + animationSurfaceView.isShowAnimation());
                 if (animationSurfaceView.isShowAnimation()) {
                     animationSurfaceView.endAnimation();
                 }
                 break;
             case R.id.btnStartAnim:
-                Log.d("Bruce1", "isShowMovie:" + animationSurfaceView.isShowAnimation());
                 if (!animationSurfaceView.isShowAnimation()) {
-                    animationSurfaceView.setIcon(BitmapFactory.decodeResource(getResources(), R.drawable.scan_icon));
                     animationSurfaceView.startAnimation();
                 }
                 break;

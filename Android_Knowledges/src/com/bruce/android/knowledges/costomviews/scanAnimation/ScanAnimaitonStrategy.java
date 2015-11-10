@@ -37,6 +37,19 @@ public class ScanAnimaitonStrategy implements IAnimationStrategy {
      */
     private boolean doing;
 
+    /**
+     * 进行动画展示的view
+     */
+    private AnimationSurfaceView animationSurfaceView;
+
+
+    public ScanAnimaitonStrategy(AnimationSurfaceView animationSurfaceView, int shift, long cyclePeriod) {
+        this.animationSurfaceView = animationSurfaceView;
+        this.shift = shift;
+        this.cyclePeriod = cyclePeriod;
+        initParams();
+    }
+
     public void start() {
         startTime = System.currentTimeMillis();
         doing = true;
@@ -45,12 +58,11 @@ public class ScanAnimaitonStrategy implements IAnimationStrategy {
     /**
      * 设置起始位置坐标
      */
-    public void setParams(int x, int y, int shift, long cyclePeriod) {
-        this.startX = x;
-        this.startY = y;
-        this.shift = shift;
-        this.cyclePeriod = cyclePeriod;
-        Log.d("Brure1", "cyclePeriod = " + cyclePeriod);
+    private void initParams() {
+        int[] position = new int[2];
+        animationSurfaceView.getLocationInWindow(position);
+        this.startX = position[0];
+        this.startY = position[1];
     }
 
     /**
@@ -63,11 +75,6 @@ public class ScanAnimaitonStrategy implements IAnimationStrategy {
         y = Math.abs(y - shift/2);
         currentY = startY + y;
         doing = true;
-    }
-
-    @Override
-    public void setParams() {
-
     }
 
     @Override

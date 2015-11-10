@@ -21,7 +21,7 @@
         <activity android:name=".Activities.TestTransformMatrixActivity"></activity>
         <activity android:name=".Activities.TestSingleTouchActivity"></activity>
         <activity android:name=".Activities.TestCosAnimationActivity"></activity>
-        <activity android:name=".costomviews.scanAnimation.ActSurfaceView"></activity>
+        <activity android:name=".costomviews.scanAnimation.ParabolaAnimationActivity"></activity>
         <activity android:name=".costomviews.scanAnimation.ScanAnimationActivity"></activity>
     </application>
 </manifest>

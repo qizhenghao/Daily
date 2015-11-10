@@ -18,8 +18,8 @@ import com.bruce.android.knowledges.R;
 
 public class TestCosAnimationActivity extends Activity {
 
-    int height = 1000;
-    long timeLimit = 20000;
+    int shift = 1000;
+    long cyclePeriod = 5000;
     ImageView imageView = null;
 
     int currentY;
@@ -81,19 +81,10 @@ public class TestCosAnimationActivity extends Activity {
     });
 
     private void computePosition() {
-        long intervalTime = (System.currentTimeMillis() - startTime) % timeLimit;
-        double angle = (360 * 1.0d * intervalTime / timeLimit);
-        int y = (int) (height / 2 * Math.cos(angle));
-//        if (angle <= 90) {
-//            y = shift/2 - y;
-//        } else if (angle > 90 && angle <= 180) {
-//            y = shift/2 + y;
-//        } else if (angle > 180 && angle <= 270) {
-//            y = shift/2 + y;
-//        } else {
-//            y = shift/2 - y;
-//        }
-        y = height / 2 - y;
+        long intervalTime = (System.currentTimeMillis() - startTime) % cyclePeriod;
+        double angle = Math.toRadians(360 * 1.0d * intervalTime / cyclePeriod);
+        int y = (int) (shift / 2 * Math.cos(angle));
+        y = Math.abs(y - shift/2);
         currentY = startY + y;
         Log.d("Bruce1", "currentX, currentY, angle, y:" + currentX + "," + currentY + "," + angle + "," + y);
     }

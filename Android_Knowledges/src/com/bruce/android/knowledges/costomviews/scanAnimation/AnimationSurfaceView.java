@@ -66,7 +66,6 @@ public class AnimationSurfaceView extends SurfaceView implements SurfaceHolder.C
 
     @Override
     public void surfaceDestroyed(SurfaceHolder holder) {
-        Log.d("Bruce1", "surfaceDestroyed");
         surfaceDestoryed = true;
         iAnimationStrategy.cancel();
     }
@@ -82,7 +81,6 @@ public class AnimationSurfaceView extends SurfaceView implements SurfaceHolder.C
         // 设置抗锯齿
         paint.setAntiAlias(true);
         paint.setColor(Color.CYAN);
-        Log.d("Bruce1", "doing:" + iAnimationStrategy.doing());
         if (listener != null) {
             listener.onAnimationStart(this);
         }
@@ -121,7 +119,12 @@ public class AnimationSurfaceView extends SurfaceView implements SurfaceHolder.C
      * 开始播放动画
      */
     public void startAnimation() {
-        thread.start();
+        if (thread.getState() == Thread.State.NEW) {
+            thread.start();
+        } else if (thread.getState() == Thread.State.TERMINATED) {
+            thread = new Thread(this);
+            thread.start();
+        }
     }
 
     /**
@@ -145,6 +148,13 @@ public class AnimationSurfaceView extends SurfaceView implements SurfaceHolder.C
      */
     public void setIcon(Bitmap bitmap) {
         this.bitmap = bitmap;
+    }
+    /**
+     * 获取要播放动画的bitmap
+     *
+     */
+    public Bitmap getIcon() {
+        return bitmap;
     }
 
     /**

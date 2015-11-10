@@ -3,20 +3,18 @@ package com.bruce.android.knowledges;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
-import android.widget.ListView;
 import com.bruce.android.knowledges.Activities.*;
-import com.bruce.android.knowledges.costomviews.scanAnimation.ActSurfaceView;
-import com.bruce.android.knowledges.costomviews.scanAnimation.ScanAnimaitonStrategy;
+import com.bruce.android.knowledges.costomviews.scanAnimation.ParabolaAnimationActivity;
+import com.bruce.android.knowledges.costomviews.scanAnimation.ParabolaAnimationStrategy;
 import com.bruce.android.knowledges.costomviews.scanAnimation.ScanAnimationActivity;
 
-public class MyActivity extends Activity implements View.OnClickListener{
+public class MyActivity extends Activity implements View.OnClickListener {
 
     private Context mContext = null;
+
     /**
      * Called when the activity is first created.
      */
@@ -43,8 +41,8 @@ public class MyActivity extends Activity implements View.OnClickListener{
     }
 
 
-    private AlphaAnimation mHideAnimation= null;
-    private AlphaAnimation mShowAnimation= null;
+    private AlphaAnimation mHideAnimation = null;
+    private AlphaAnimation mShowAnimation = null;
 
     @Override
     public void onClick(View v) {
@@ -76,11 +74,11 @@ public class MyActivity extends Activity implements View.OnClickListener{
             case R.id.main_open_cos_animation_btn:
                 startActivity(new Intent(mContext, TestCosAnimationActivity.class));
                 break;
+            case R.id.main_open_scan_animation1_btn:
+                startActivity(new Intent(mContext, ParabolaAnimationActivity.class));
+                break;
             case R.id.main_open_scan_animation_btn:
                 startActivity(new Intent(mContext, ScanAnimationActivity.class));
-                break;
-            case R.id.main_open_scan_animation1_btn:
-                startActivity(new Intent(mContext, TestCosAnimationActivity.class));
                 break;
 
             default:

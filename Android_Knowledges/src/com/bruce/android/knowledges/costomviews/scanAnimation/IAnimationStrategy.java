@@ -7,8 +7,6 @@ public interface IAnimationStrategy {
 
     public void compute();
 
-    public void setParams();
-
     public boolean doing();
 
     public void start();
