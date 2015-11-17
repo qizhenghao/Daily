@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import com.bruce.android.knowledges.Activities.*;
+import com.bruce.android.knowledges.costomviews.TweenAnimation.TestTweenAnimationActivity;
 import com.bruce.android.knowledges.costomviews.scanAnimation.ParabolaAnimationActivity;
 import com.bruce.android.knowledges.costomviews.scanAnimation.ParabolaAnimationStrategy;
 import com.bruce.android.knowledges.costomviews.scanAnimation.ScanAnimationActivity;
@@ -47,6 +48,9 @@ public class MyActivity extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.main_open_test_tween_animation_btn:
+                startActivity(new Intent(mContext, TestTweenAnimationActivity.class));
+                break;
             case R.id.main_open_test_shader_btn:
                 startActivity(new Intent(mContext, TestShaderActivity.class));
                 break;

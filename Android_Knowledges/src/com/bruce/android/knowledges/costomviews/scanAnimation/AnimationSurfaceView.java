@@ -3,7 +3,6 @@ package com.bruce.android.knowledges.costomviews.scanAnimation;
 import android.content.Context;
 import android.graphics.*;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
@@ -24,11 +23,14 @@ public class AnimationSurfaceView extends SurfaceView implements SurfaceHolder.C
     private Bitmap bitmap;
     private IAnimationStrategy iAnimationStrategy;
     private OnAnimationStausChangedListener listener;
+
+    private int marginLeft;
+    private int marginTop;
+
     /**
      * 默认未创建，相当于Destory。
      */
     private boolean surfaceDestoryed = true;
-
     private Thread thread;
 
     public AnimationSurfaceView(Context context, AttributeSet attrs, int defStyle) {
@@ -75,7 +77,7 @@ public class AnimationSurfaceView extends SurfaceView implements SurfaceHolder.C
 
         Paint pTmp = new Paint();
         pTmp.setAntiAlias(true);
-        pTmp.setColor(Color.RED);
+        pTmp.setColor(Color.TRANSPARENT);
 
         Paint paint = new Paint();
         // 设置抗锯齿
@@ -92,8 +94,8 @@ public class AnimationSurfaceView extends SurfaceView implements SurfaceHolder.C
                 // 设置画布的背景为透明。
                 canvas.drawColor(Color.TRANSPARENT, android.graphics.PorterDuff.Mode.CLEAR);
                 // 绘上新图区域
-                float x = (float) iAnimationStrategy.getX();
-                float y = (float) iAnimationStrategy.getY();
+                float x = (float) iAnimationStrategy.getX() + marginLeft;
+                float y = (float) iAnimationStrategy.getY() + marginTop;
                 canvas.drawRect(x, y, x + bitmap.getWidth(), y + bitmap.getHeight(), pTmp);
                 canvas.drawBitmap(bitmap, x, y, paint);
                 holder.unlockCanvasAndPost(canvas);
@@ -155,6 +157,22 @@ public class AnimationSurfaceView extends SurfaceView implements SurfaceHolder.C
      */
     public Bitmap getIcon() {
         return bitmap;
+    }
+
+    /**
+     * 设置margin left 像素
+     * @param marginLeftPx
+     */
+    public void setMarginLeft(int marginLeftPx) {
+        this.marginLeft = marginLeftPx;
+    }
+
+    /**
+     * 设置margin left 像素
+     * @param marginTopPx
+     */
+    public void setMarginTop(int marginTopPx) {
+        this.marginTop = marginTopPx;
     }
 
     /**
