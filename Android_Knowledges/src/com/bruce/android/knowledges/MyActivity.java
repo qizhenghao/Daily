@@ -4,9 +4,11 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import com.bruce.android.knowledges.Activities.*;
+import com.bruce.android.knowledges.costomviewdemos.DemoPopupWindow;
 import com.bruce.android.knowledges.costomviews.TweenAnimation.TestTweenAnimationActivity;
 import com.bruce.android.knowledges.costomviews.scanAnimation.ParabolaAnimationActivity;
 import com.bruce.android.knowledges.costomviews.scanAnimation.ParabolaAnimationStrategy;
@@ -48,6 +50,10 @@ public class MyActivity extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.main_open_test_popupwindow_dialog_btn:
+                DemoPopupWindow pw = new DemoPopupWindow(this);
+                pw.showAtLocation(getWindow().getDecorView(), Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
+                break;
             case R.id.main_open_test_tween_animation_btn:
                 startActivity(new Intent(mContext, TestTweenAnimationActivity.class));
                 break;

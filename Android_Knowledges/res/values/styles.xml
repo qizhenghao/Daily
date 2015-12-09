@@ -24,4 +24,10 @@
             <enum name="left_bottom" value="3" />
         </attr>
     </declare-styleable>
+
+    <style name="Animations_BottomPush">
+        <item name="android:windowEnterAnimation">@anim/push_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/push_bottom_out</item>
+    </style>
+
 </resources>
