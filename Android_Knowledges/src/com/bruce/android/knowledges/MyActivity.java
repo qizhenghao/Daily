@@ -50,6 +50,9 @@ public class MyActivity extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.main_open_test_slideviewpager_btn:
+                startActivity(new Intent(mContext, TestSlideViewPagerActivity.class));
+                break;
             case R.id.main_open_test_popupwindow_dialog_btn:
                 DemoPopupWindow pw = new DemoPopupWindow(this);
                 pw.showAtLocation(getWindow().getDecorView(), Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
