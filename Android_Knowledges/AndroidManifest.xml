@@ -32,6 +32,7 @@
         <activity android:name=".Activities.TestSlideViewPagerActivity"></activity>
         <activity android:name=".Activities.TestCircleMenuActivity"></activity>
         <activity android:name=".Activities.TestMultiImageViewActivity"></activity>
+        <activity android:name=".Activities.InternetVideoActivity"></activity>
         <activity android:name=".costomviews.scanAnimation.ParabolaAnimationActivity"></activity>
         <activity android:name=".costomviews.scanAnimation.ScanAnimationActivity"></activity>
         <activity android:name=".costomviews.TweenAnimation.TestTweenAnimationActivity"></activity>

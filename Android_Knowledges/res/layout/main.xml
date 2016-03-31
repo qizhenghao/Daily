@@ -13,6 +13,15 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+            <Button
+                android:id="@+id/main_open_test_VideoView_btn"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="2dp"
+                android:onClick="onClick"
+                android:text="VideoView" />
 
             <Button
                 android:id="@+id/main_open_test_muti_iv_btn"
