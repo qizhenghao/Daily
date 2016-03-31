@@ -4,6 +4,9 @@
     android:versionCode="1"
     android:versionName="1.0">
 
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE">
+    </uses-permission>
     <uses-sdk android:minSdkVersion="14" />
     <application
         android:icon="@drawable/ic_launcher"
@@ -27,6 +30,8 @@
         <activity android:name=".Activities.TestSingleTouchActivity"></activity>
         <activity android:name=".Activities.TestCosAnimationActivity"></activity>
         <activity android:name=".Activities.TestSlideViewPagerActivity"></activity>
+        <activity android:name=".Activities.TestCircleMenuActivity"></activity>
+        <activity android:name=".Activities.TestMultiImageViewActivity"></activity>
         <activity android:name=".costomviews.scanAnimation.ParabolaAnimationActivity"></activity>
         <activity android:name=".costomviews.scanAnimation.ScanAnimationActivity"></activity>
         <activity android:name=".costomviews.TweenAnimation.TestTweenAnimationActivity"></activity>

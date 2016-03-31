@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
@@ -17,16 +18,23 @@ import com.bruce.android.knowledges.costomviews.scanAnimation.ScanAnimationActiv
 public class MyActivity extends Activity implements View.OnClickListener {
 
     private Context mContext = null;
+    private long currTime;
 
     /**
      * Called when the activity is first created.
      */
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        currTime = System.currentTimeMillis();
         super.onCreate(savedInstanceState);
+        Log.d("Bruce", "init super cost time: " + (System.currentTimeMillis() - currTime));
+        currTime = System.currentTimeMillis();
         setContentView(R.layout.main);
-
+        Log.d("Bruce", "setContentView cost time: " + (System.currentTimeMillis() - currTime));
+        currTime = System.currentTimeMillis();
         initViews();
+        Log.d("Bruce", "initViews cost time: " + (System.currentTimeMillis() - currTime));
+        currTime = System.currentTimeMillis();
         initData();
     }
 
@@ -50,6 +58,12 @@ public class MyActivity extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.main_open_test_muti_iv_btn:
+                startActivity(new Intent(mContext, TestMultiImageViewActivity.class));
+                break;
+            case R.id.main_open_test_CircleMenu_btn:
+                startActivity(new Intent(mContext, TestCircleMenuActivity.class));
+                break;
             case R.id.main_open_test_slideviewpager_btn:
                 startActivity(new Intent(mContext, TestSlideViewPagerActivity.class));
                 break;
