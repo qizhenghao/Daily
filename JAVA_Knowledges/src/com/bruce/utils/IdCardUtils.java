@@ -435,13 +435,35 @@ public class IdCardUtils {
         return a;
     }
 
+    public static boolean isMore18(String idCard) {
+        String birthday = idCard.substring(6, 14);
+        // 该身份证生出日期在当前日期之后时为假
+        Date birthdate = null;
+        try {
+            birthdate = new SimpleDateFormat("yyyyMMdd").parse(birthday);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        Date currDate = new Date();
+        currDate.setYear(currDate.getYear()-18);
+        if (birthdate == null || currDate.before(birthdate)) {
+            return false;
+        }
+        return true;
+    }
+
     public static void main(String[] args) throws Exception {
 
         String idcard15 = "142431199001145";//15位
         String idcard18 = "121212121212121212";//18位
+        String idcard1 = "13203319900115331X";//18位
+        String idcard2 = "13102519980815331X";//18位
         IdCardUtils iv = new IdCardUtils();
         System.out.println(iv.isValidatedAllIdcard(idcard15));
         System.out.println(iv.isValidatedAllIdcard(idcard18));
+
+        System.out.println(iv.isMore18(idcard1));
+        System.out.println(iv.isMore18(idcard2));
 
     }
 }

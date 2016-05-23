@@ -14,5 +14,8 @@ public class TestRandom {
         int randomId = ids[(new Random()).nextInt(ids.length)];//产生随机图片id
 
         System.out.println(randomId);
+
+        int n = -10;
+        System.out.println(n%100);
     }
 }
