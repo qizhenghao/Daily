@@ -58,6 +58,12 @@ public class MyActivity extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.main_open_test_clip_btn:
+                startActivity(new Intent(mContext, TestClipActivity.class));
+                break;
+            case R.id.main_open_test_lineview_btn:
+                startActivity(new Intent(mContext, TestLineViewActivity.class));
+                break;
             case R.id.main_open_test_VideoView_btn:
                 startActivity(new Intent(mContext, InternetVideoActivity.class));
                 break;
