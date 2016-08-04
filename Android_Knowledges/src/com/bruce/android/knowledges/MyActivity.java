@@ -11,6 +11,7 @@ import android.view.animation.AlphaAnimation;
 import com.bruce.android.knowledges.Activities.*;
 import com.bruce.android.knowledges.costomviewdemos.DemoPopupWindow;
 import com.bruce.android.knowledges.costomviews.TweenAnimation.TestTweenAnimationActivity;
+import com.bruce.android.knowledges.costomviews.pinnedHeaderListView.TestPinnedHeaderListviewActivity;
 import com.bruce.android.knowledges.costomviews.scanAnimation.ParabolaAnimationActivity;
 import com.bruce.android.knowledges.costomviews.scanAnimation.ParabolaAnimationStrategy;
 import com.bruce.android.knowledges.costomviews.scanAnimation.ScanAnimationActivity;
@@ -60,6 +61,9 @@ public class MyActivity extends Activity implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.main_open_test_clip_btn:
                 startActivity(new Intent(mContext, TestClipActivity.class));
+                break;
+            case R.id.main_open_test_pinned_btn:
+                startActivity(new Intent(mContext, TestPinnedHeaderListviewActivity.class));
                 break;
             case R.id.main_open_test_lineview_btn:
                 startActivity(new Intent(mContext, TestLineViewActivity.class));

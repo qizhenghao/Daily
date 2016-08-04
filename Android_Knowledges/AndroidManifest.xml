@@ -38,5 +38,6 @@
         <activity android:name=".costomviews.scanAnimation.ParabolaAnimationActivity"></activity>
         <activity android:name=".costomviews.scanAnimation.ScanAnimationActivity"></activity>
         <activity android:name=".costomviews.TweenAnimation.TestTweenAnimationActivity"></activity>
+        <activity android:name=".costomviews.pinnedHeaderListView.TestPinnedHeaderListviewActivity"></activity>
     </application>
 </manifest>
