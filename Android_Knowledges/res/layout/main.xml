@@ -37,6 +37,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="2dp"
+                android:rotation="-15"
+                android:textStyle="bold|italic"
                 android:onClick="onClick"
                 android:text="LineView" />
 

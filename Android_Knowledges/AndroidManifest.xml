@@ -9,6 +9,7 @@
     </uses-permission>
     <uses-sdk android:minSdkVersion="14" />
     <application
+        android:name=".base.KnowApplication"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@android:style/Theme.Light.NoTitleBar">
