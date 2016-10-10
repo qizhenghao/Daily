@@ -17,7 +17,6 @@ public class KnowApplication extends Application {
 
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
-        Log.d("Bruce", "onConfigurationChanged " + newConfig.fontScale);
         if (newConfig.fontScale != 1)
             getResources();
         super.onConfigurationChanged(newConfig);
@@ -26,7 +25,6 @@ public class KnowApplication extends Application {
     @Override
     public Resources getResources() {
         Resources res = super.getResources();
-        Log.d("Bruce", "newConfig.fontScale = " + res.getConfiguration().fontScale);
         if (res.getConfiguration().fontScale != 1) {
             Configuration newConfig = new Configuration();
             newConfig.setToDefaults();
