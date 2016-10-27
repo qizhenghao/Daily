@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.SystemClock;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -49,7 +51,15 @@ public class MyActivity extends Activity implements View.OnClickListener {
     }
 
     private void initViews() {
-
+        final Handler handler = new Handler();
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                Log.d("Bruce", "uptimeMillis = " + SystemClock.uptimeMillis() + "");
+                handler.postAtTime(this, SystemClock.uptimeMillis() + 5*1000);
+            }
+        };
+        handler.postAtTime(runnable, SystemClock.uptimeMillis() + 5*1000);
     }
 
 
@@ -59,6 +69,9 @@ public class MyActivity extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.main_open_test_ImageView_btn:
+                startActivity(new Intent(mContext, TestImageViewActivity.class));
+                break;
             case R.id.main_open_test_clip_btn:
                 startActivity(new Intent(mContext, TestClipActivity.class));
                 break;

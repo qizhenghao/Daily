@@ -36,6 +36,7 @@
         <activity android:name=".Activities.InternetVideoActivity"></activity>
         <activity android:name=".Activities.TestLineViewActivity"></activity>
         <activity android:name=".Activities.TestClipActivity"></activity>
+        <activity android:name=".Activities.TestImageViewActivity"></activity>
         <activity android:name=".costomviews.scanAnimation.ParabolaAnimationActivity"></activity>
         <activity android:name=".costomviews.scanAnimation.ScanAnimationActivity"></activity>
         <activity android:name=".costomviews.TweenAnimation.TestTweenAnimationActivity"></activity>
