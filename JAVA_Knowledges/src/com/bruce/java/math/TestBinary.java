@@ -11,5 +11,9 @@ public class TestBinary {
         System.out.println(Integer.toBinaryString(-1 >>> 1));
         System.out.println(Integer.toBinaryString(-1 << 1));
 //        System.out.println(-1 << 1);
+
+        System.out.println(Integer.toBinaryString('P'));
+        System.out.println(Integer.toBinaryString('A'));
+        System.out.println(Integer.toBinaryString('A' & 'P'));
     }
 }

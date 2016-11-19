@@ -37,6 +37,7 @@ public class MyActivity extends Activity implements View.OnClickListener {
         currTime = System.currentTimeMillis();
         initViews();
         Log.d("Bruce", "initViews cost time: " + (System.currentTimeMillis() - currTime));
+        Log.d("Bruce", "Runtime.getRuntime().availableProcessors(): " + Runtime.getRuntime().availableProcessors());
         currTime = System.currentTimeMillis();
         initData();
     }
