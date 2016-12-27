@@ -41,5 +41,6 @@
         <activity android:name=".costomviews.scanAnimation.ScanAnimationActivity"></activity>
         <activity android:name=".costomviews.TweenAnimation.TestTweenAnimationActivity"></activity>
         <activity android:name=".costomviews.pinnedHeaderListView.TestPinnedHeaderListviewActivity"></activity>
+        <activity android:name=".services.ServiceTestActivity"></activity>
     </application>
 </manifest>
