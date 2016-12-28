@@ -41,6 +41,12 @@
         <activity android:name=".costomviews.scanAnimation.ScanAnimationActivity"></activity>
         <activity android:name=".costomviews.TweenAnimation.TestTweenAnimationActivity"></activity>
         <activity android:name=".costomviews.pinnedHeaderListView.TestPinnedHeaderListviewActivity"></activity>
-        <activity android:name=".services.ServiceTestActivity"></activity>
+        <activity android:name=".services.ServiceTestActivity"/>
+
+        <service android:name=".services.MyService">
+            <intent-filter>
+                <action android:name="com.test.SERVICE_TEST"/>
+            </intent-filter>
+        </service>
     </application>
 </manifest>

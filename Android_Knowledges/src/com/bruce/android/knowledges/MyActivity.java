@@ -17,6 +17,7 @@ import com.bruce.android.knowledges.costomviews.pinnedHeaderListView.TestPinnedH
 import com.bruce.android.knowledges.costomviews.scanAnimation.ParabolaAnimationActivity;
 import com.bruce.android.knowledges.costomviews.scanAnimation.ParabolaAnimationStrategy;
 import com.bruce.android.knowledges.costomviews.scanAnimation.ScanAnimationActivity;
+import com.bruce.android.knowledges.services.ServiceTestActivity;
 
 public class MyActivity extends Activity implements View.OnClickListener {
 
@@ -70,6 +71,9 @@ public class MyActivity extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.service_demo:
+                startActivity(new Intent(mContext, ServiceTestActivity.class));
+                break;
             case R.id.main_open_test_ImageView_btn:
                 startActivity(new Intent(mContext, TestImageViewActivity.class));
                 break;
