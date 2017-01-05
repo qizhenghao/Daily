@@ -9,6 +9,14 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
         <Button
+            android:id="@+id/http_demo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="2dp"
+            android:onClick="onClick"
+            android:text="http_demo"/>
+        <Button
             android:id="@+id/service_demo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
