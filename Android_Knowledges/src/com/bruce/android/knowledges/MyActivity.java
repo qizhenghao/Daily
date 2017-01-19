@@ -11,6 +11,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import com.bruce.android.knowledges.Activities.*;
+import com.bruce.android.knowledges.Activities.processTest.TestProcessActivity;
 import com.bruce.android.knowledges.costomviewdemos.DemoPopupWindow;
 import com.bruce.android.knowledges.costomviews.TweenAnimation.TestTweenAnimationActivity;
 import com.bruce.android.knowledges.costomviews.pinnedHeaderListView.TestPinnedHeaderListviewActivity;
@@ -74,6 +75,9 @@ public class MyActivity extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.process_test:
+                startActivity(new Intent(mContext, TestProcessActivity.class));
+                break;
             case R.id.http_demo:
                 startActivity(new Intent(mContext, TestHttpActivity.class));
                 break;

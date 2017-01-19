@@ -42,6 +42,19 @@
         <activity android:name=".costomviews.pinnedHeaderListView.TestPinnedHeaderListviewActivity"></activity>
         <activity android:name=".services.ServiceTestActivity"/>
         <activity android:name=".net.demo.TestHttpActivity"/>
+        <activity android:name=".Activities.processTest.TestProcessActivity"/>
+        <activity android:name=".Activities.processTest.Process1Activity"
+            android:process=":process_1"/>
+        <activity android:name=".Activities.processTest.Process2Activity"
+                  android:process=":process_2"/>
+        <activity android:name=".Activities.processTest.Process3Activity"
+                  android:process=":process_3"/>
+        <activity android:name=".Activities.processTest.Process4Activity"
+                  android:process=":process_4"/>
+        <activity android:name=".Activities.processTest.Process5Activity"
+                  android:process=":process_5"/>
+        <activity android:name=".Activities.processTest.Process6Activity"
+                  android:process=":process_6"/>
 
 
         <service android:name=".services.MyService">

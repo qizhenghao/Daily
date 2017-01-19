@@ -202,8 +202,8 @@ public class TestHttpActivity extends Activity {
 		progressBar.setVisibility(View.VISIBLE);
 		Context context = getApplicationContext();
 		viewGroup = (ViewGroup)findViewById(R.id.parent_view);
-		//		TestHttpActivity.this.addContentView(progressBar, params);
-		viewGroup.addView(progressBar, params);		
+		//		TestProcessActivity.this.addContentView(progressBar, params);
+		viewGroup.addView(progressBar, params);
 	}
 	/**
 	 * 隐藏进度条

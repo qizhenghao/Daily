@@ -10,9 +10,11 @@ import android.util.Log;
  */
 public class KnowApplication extends Application {
 
+    public static final String TAG = "KnowApplication";
     @Override
     public void onCreate() {
         super.onCreate();
+        Log.d(TAG, "currentThread().getId() = " + Thread.currentThread().getId() + "");
     }
 
     @Override
