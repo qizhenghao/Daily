@@ -13,6 +13,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.text.Html;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.TextPaint;
@@ -42,6 +43,7 @@ import android.widget.Toast;
 public class TextViewLinkActivity extends Activity {
     TextView mTextView = null;   
     TextView mTextView1 = null;
+    TextView mTextView2 = null;
     SpannableString msp = null;
     SpannableString msp1 = null;
 
@@ -53,6 +55,7 @@ public class TextViewLinkActivity extends Activity {
         
         mTextView = (TextView)findViewById(R.id.myTextView);
         mTextView1 = (TextView)findViewById(R.id.myTextView1);
+        mTextView2 = (TextView)findViewById(R.id.myTextView2);
 
         //创建一个 SpannableString对象
         msp = new SpannableString("字体测试字体大小一半两倍前景色背景色正常粗体斜体粗斜体下划线删除线x1x2电话邮件网站短信彩信地图X轴综合/bot");
@@ -185,5 +188,7 @@ public class TextViewLinkActivity extends Activity {
 //        mTextView1.setText(msp1);
 //        mTextView1.setHighlightColor(Color.TRANSPARENT);
 //        mTextView1.setMovementMethod(LinkMovementMethod.getInstance());
+
+        mTextView2.setText(Html.fromHtml(getString(R.string.live_video_need_bind_idcard)));
     }
 }
