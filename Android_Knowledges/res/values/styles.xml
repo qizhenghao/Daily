@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <style name="app_theme" parent="@android:style/Theme.Light.NoTitleBar">
+        <!--<item name="android:background">@color/white</item>-->
+    </style>
     <style name="text_flag_01">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -96,4 +100,10 @@
     <declare-styleable name="TopRoundedImageView">
         <attr name="top_corner_radius" format="dimension"/>
     </declare-styleable>
+
+    <!--************************************* progressbar **********************************-->
+    <style name="progressBar" parent="@android:style/Widget.ProgressBar">
+        <item name="android:indeterminateDuration">1000</item>
+        <item name="android:indeterminateDrawable">@drawable/progress_bar_anim</item>
+    </style>
 </resources>

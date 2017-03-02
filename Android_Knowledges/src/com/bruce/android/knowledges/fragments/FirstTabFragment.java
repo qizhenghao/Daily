@@ -1,76 +1,64 @@
-package com.bruce.android.knowledges;
+package com.bruce.android.knowledges.fragments;
 
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
-import android.os.Handler;
-import android.os.SystemClock;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
-import android.view.animation.AlphaAnimation;
-import com.bruce.android.knowledges.Activities.*;
+
+import com.bruce.android.knowledges.Activities.CanvasActivity;
+import com.bruce.android.knowledges.Activities.InternetVideoActivity;
+import com.bruce.android.knowledges.Activities.TestCircleMenuActivity;
+import com.bruce.android.knowledges.Activities.TestClipActivity;
+import com.bruce.android.knowledges.Activities.TestCosAnimationActivity;
+import com.bruce.android.knowledges.Activities.TestCustomViewGroupActivity;
+import com.bruce.android.knowledges.Activities.TestFlowLayoutActivity;
+import com.bruce.android.knowledges.Activities.TestImageViewActivity;
+import com.bruce.android.knowledges.Activities.TestLineViewActivity;
+import com.bruce.android.knowledges.Activities.TestMultiImageViewActivity;
+import com.bruce.android.knowledges.Activities.TestRotationTextViewActivity;
+import com.bruce.android.knowledges.Activities.TestShaderActivity;
+import com.bruce.android.knowledges.Activities.TestSingleTouchActivity;
+import com.bruce.android.knowledges.Activities.TestSlideViewPagerActivity;
+import com.bruce.android.knowledges.Activities.TestTransformMatrixActivity;
+import com.bruce.android.knowledges.Activities.TextViewLinkActivity;
 import com.bruce.android.knowledges.Activities.processTest.TestProcessActivity;
+import com.bruce.android.knowledges.R;
 import com.bruce.android.knowledges.costomviewdemos.DemoPopupWindow;
 import com.bruce.android.knowledges.costomviews.TweenAnimation.TestTweenAnimationActivity;
 import com.bruce.android.knowledges.costomviews.pinnedHeaderListView.TestPinnedHeaderListviewActivity;
 import com.bruce.android.knowledges.costomviews.scanAnimation.ParabolaAnimationActivity;
-import com.bruce.android.knowledges.costomviews.scanAnimation.ParabolaAnimationStrategy;
 import com.bruce.android.knowledges.costomviews.scanAnimation.ScanAnimationActivity;
 import com.bruce.android.knowledges.net.demo.TestHttpActivity;
 import com.bruce.android.knowledges.services.ServiceTestActivity;
 
-public class MyActivity extends Activity implements View.OnClickListener {
+/**
+ * Created by qizhenghao on 17/3/2.
+ */
+public class FirstTabFragment extends BaseFragment implements View.OnClickListener{
 
-    private Context mContext = null;
-    private long currTime;
-
-    /**
-     * Called when the activity is first created.
-     */
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        currTime = System.currentTimeMillis();
-        super.onCreate(savedInstanceState);
-        Log.d("Bruce", "init super cost time: " + (System.currentTimeMillis() - currTime));
-        currTime = System.currentTimeMillis();
-        setContentView(R.layout.main);
-        Log.d("Bruce", "setContentView cost time: " + (System.currentTimeMillis() - currTime));
-        currTime = System.currentTimeMillis();
-        initViews();
-        Log.d("Bruce", "initViews cost time: " + (System.currentTimeMillis() - currTime));
-        Log.d("Bruce", "Runtime.getRuntime().availableProcessors(): " + Runtime.getRuntime().availableProcessors());
-        currTime = System.currentTimeMillis();
-        initData();
+    protected int getLayoutId() {
+        return R.layout.main;
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
-    }
-
-    private void initData() {
-        mContext = MyActivity.this;
-
+    protected void initView() {
 
     }
 
-    private void initViews() {
-        final Handler handler = new Handler();
-        Runnable runnable = new Runnable() {
-            @Override
-            public void run() {
-                Log.d("Bruce", "uptimeMillis = " + SystemClock.uptimeMillis() + "");
-                handler.postAtTime(this, SystemClock.uptimeMillis() + 5*1000);
-            }
-        };
-        handler.postAtTime(runnable, SystemClock.uptimeMillis() + 5*1000);
+    @Override
+    protected void initData() {
+
     }
 
+    @Override
+    protected void initListener() {
 
-    private AlphaAnimation mHideAnimation = null;
-    private AlphaAnimation mShowAnimation = null;
+    }
+
+    @Override
+    public void refresh() {
+
+    }
 
     @Override
     public void onClick(View v) {
@@ -109,8 +97,8 @@ public class MyActivity extends Activity implements View.OnClickListener {
                 startActivity(new Intent(mContext, TestSlideViewPagerActivity.class));
                 break;
             case R.id.main_open_test_popupwindow_dialog_btn:
-                DemoPopupWindow pw = new DemoPopupWindow(this);
-                pw.showAtLocation(getWindow().getDecorView(), Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
+                DemoPopupWindow pw = new DemoPopupWindow(getContext());
+                pw.showAtLocation(getActivity().getWindow().getDecorView(), Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
                 break;
             case R.id.main_open_test_tween_animation_btn:
                 startActivity(new Intent(mContext, TestTweenAnimationActivity.class));
@@ -152,38 +140,5 @@ public class MyActivity extends Activity implements View.OnClickListener {
             default:
                 break;
         }
-    }
-
-
-    /**
-     * View渐隐动画效果
-     */
-    private void setHideAnimation(View view, int duration) {
-        if (null == view || duration < 0) {
-            return;
-        }
-        if (null != mHideAnimation) {
-            mHideAnimation.cancel();
-        }
-        mHideAnimation = new AlphaAnimation(1.0f, 0.0f);
-        mHideAnimation.setDuration(duration);
-        mHideAnimation.setFillAfter(true);
-        view.startAnimation(mHideAnimation);
-    }
-
-    /**
-     * View渐现动画效果
-     */
-    private void setShowAnimation(View view, int duration) {
-        if (null == view || duration < 0) {
-            return;
-        }
-        if (null != mShowAnimation) {
-            mShowAnimation.cancel();
-        }
-        mShowAnimation = new AlphaAnimation(0.0f, 1.0f);
-        mShowAnimation.setDuration(duration);
-        mShowAnimation.setFillAfter(true);
-        view.startAnimation(mShowAnimation);
     }
 }
