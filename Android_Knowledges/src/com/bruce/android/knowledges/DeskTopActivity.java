@@ -53,10 +53,10 @@ public class DeskTopActivity extends FragmentActivity implements View.OnClickLis
     public void onCreate(Bundle savedInstanceState) {
         currTime = System.currentTimeMillis();
         super.onCreate(savedInstanceState);
-        getWindow().setBackgroundDrawable(null);
         Log.d("Bruce", "init super cost time: " + (System.currentTimeMillis() - currTime));
         currTime = System.currentTimeMillis();
         setContentView(R.layout.activity_main);
+        getWindow().setBackgroundDrawable(null);
         Log.d("Bruce", "setContentView cost time: " + (System.currentTimeMillis() - currTime));
         currTime = System.currentTimeMillis();
         initViews();

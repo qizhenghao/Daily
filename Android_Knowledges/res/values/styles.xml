@@ -2,7 +2,7 @@
 <resources>
 
     <style name="app_theme" parent="@android:style/Theme.Light.NoTitleBar">
-        <!--<item name="android:background">@color/white</item>-->
+        <item name="android:windowBackground">@color/gold</item>
     </style>
     <style name="text_flag_01">
         <item name="android:layout_width">wrap_content</item>
