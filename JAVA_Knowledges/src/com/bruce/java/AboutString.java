@@ -1,11 +1,18 @@
 package com.bruce.java;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 /**
  * Created by qizhenghao on 15-12-4.
  */
 public class AboutString {
 
     public static void main(String[] args) {
+
+        System.out.println(Arrays.toString(",a,,,,,".split(",")));
+        System.out.println(Arrays.toString(",,a,".split(",")));
+
 
         String A = "a我我我";
         String B = "a我我我";
